@@ -28,10 +28,19 @@ class WeightCalculator:
 #This part won't be executed if the file is imported as a module
 if __name__ == '__main__':
     #Input weight
-    astronaut_mass = float(input("Enter the mass of the astronaut: "))
+    astronaut_mass = 0.0
+    while not astronaut_mass:
+        try:
+            astronaut_mass = float(input("Enter the mass of the astronaut: "))
+        except ValueError:
+            print("Mass must be a number")
+            continue
 
     #Input planet to calculate weight for
     planet = input("Select a planet in the solar system: ")
+    valid_planets = ['saturn','jupiter','mars','mercury','venus','uranus','neptune','pluto' ]
+    while planet.lower() not in valid_planets:
+        planet = input('Select a planet in the solar system: ')
 
     #Calculate weight
     if planet.lower() == "mercury":
