@@ -27,7 +27,7 @@ class WeightCalculator:
 #Allows code to be run only if "weightcalculator.py" is ran
 #This part won't be executed if the file is imported as a module
 if __name__ == '__main__':
-    #Input weight
+    #Will ask for mass until an input in a numerical form is given
     astronaut_mass = 0.0
     while not astronaut_mass:
         try:
@@ -38,6 +38,8 @@ if __name__ == '__main__':
 
     #Input planet to calculate weight for
     planet = input("Select a planet in the solar system: ")
+
+    #Asks to input planet again if planet isn't one in this solar system
     valid_planets = ['saturn','jupiter','mars','mercury','venus','uranus','neptune','pluto' ]
     while planet.lower() not in valid_planets:
         planet = input('Select a planet in the solar system: ')
