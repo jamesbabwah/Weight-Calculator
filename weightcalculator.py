@@ -39,7 +39,7 @@ if __name__ == '__main__':
     #Input planet to calculate weight for
     planet = input("Select a planet in the solar system: ")
 
-    #Asks to input planet again if planet isn't one in this solar system
+    #Asks to input planet again if planet isn't one in this solar system (or earth)
     valid_planets = ['saturn','jupiter','mars','mercury','venus','uranus','neptune','pluto' ]
     while planet.lower() not in valid_planets:
         planet = input('Select a planet in the solar system: ')
@@ -62,5 +62,5 @@ if __name__ == '__main__':
     if planet.lower() == "pluto":
         result = WeightCalculator.Pluto(astronaut_mass)
 
-    #Print weight
-    print("your weight on the planet is: ", result)
+    #Print weight to do decimal places
+    print(f"your weight on the planet is: {result:.2f}")
